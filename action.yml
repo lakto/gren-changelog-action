@@ -1,0 +1,13 @@
+name: "Gren changelog action"
+description: "Update changelog file using Gren"
+author: "Kilchenmann"
+inputs:
+  options:  # Add the gren options here
+    description: 'Add the gren options here; e.g. " --generate --override --changelog-filename=RELEASE_NOTES.md"'
+    required: false
+    default: ''
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.options }}
